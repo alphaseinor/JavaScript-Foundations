@@ -110,10 +110,6 @@ This function should return the monthly payment, not console log it as the conso
 
 
 
-//Write your monthlyCalculator function above this line
-
-
-
 ////////////////////////////////////////////////////////////////////////////
 // 🏡 Task 5: Conditionals
 /* 
@@ -129,7 +125,7 @@ if credit score is below 660, interest rate increases by 0.5% (.005) and if cred
 Return the updated monthly payment by returning monthlyCalculator with the total, updated interest (if any), and term
 
 */
-//Write your scoreCalculator function on the line below
+//Write your scoreCalculator function below
 
 
 
@@ -161,7 +157,7 @@ Oscar, with an interest rate of 0.05, your monthly rate is $1074.64
 Oscar, with an interest rate of 0.055, your monthly rate is $1136.38
 Oscar, with an interest rate of 0.06, your monthly rate is $1199.10
 */
-//write your interestRateList below
+//write your interestRateList function below
 
 
 
