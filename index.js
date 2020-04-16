@@ -16,18 +16,15 @@ Would you use let, var, or const, and why?
 Under these variables, console.log the name variable
 
 */
-
 //Write your variables below this line
 
-const principal = 200000
-const interestRate = 0.05
-const years = 30
-const name = "Brian Hague"
+
 
 //Write your console log below this line
 
-console.log(name)
 
+
+////////////////////////////////////////////////////////////////////////////
 // 🏡 Task 1.5: Simple Math
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
 
@@ -38,17 +35,15 @@ Create another variable called `periods` and give it the value of years*12.
 console.log using template literals `${name} monthly interest rate is: ${monthlyInterestRate} and will pay for ${periods} months`
 
 */
-
 //Write your basic math below this line
 
-const monthlyInterestRate = interestRate / 12
-const periods = years * 12
+
 
 //Write your console.log below this line
 
-console.log(`${name} monthly interest rate is: ${monthlyInterestRate} and will pay for ${periods} months`)
 
 
+////////////////////////////////////////////////////////////////////////////
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
 
@@ -68,16 +63,15 @@ M = P ( I ( 1 + I )^N ) / ( ( 1 + I )^N – 1 )
 using template literals console log `${name} monthly payment is ${monthlyRate}`. This should say something like `Oscar monthly payment is $1073.64`
 
 */
-
 //Write your harder math below this line
 
-const numerator = principal * monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods)
-const denominator = Math.pow((1+monthlyInterestRate), periods) -1
-const monthlyRate = (numerator / denominator).toFixed(2)
+
 
 //Write your console.log below this line
-console.log(`${name} monthly payment is ${monthlyRate}`)
 
+
+
+////////////////////////////////////////////////////////////////////////////
 // 🏡 Task 3: Function
 /* 
 
@@ -90,19 +84,15 @@ after you have written your mortgageCalculator, invoke it inside of a console.lo
 i.e. console.log(displayMortgage())
 
 */
-
 //Write your displayMortgage function below this line
 
-const displayMortgage = () => {
-  return `${name}, your monthly rate is ${monthlyRate}`
-}
+
 
 //Write your console log below this line
 
-console.log(displayMortgage())
 
 
-
+////////////////////////////////////////////////////////////////////////////
 // 🏡 Task 4: Arguments and Parameters
 /* 
 
@@ -116,23 +106,15 @@ A good choice for parameter names might be, total, interest, term
 This function should return the monthly payment, not console log it as the console log is already done for you. 
 
 */
-
 //Write your monthlyCalculator function below this line
 
-const monthlyCalculator = (total, interest, term) => {
-  const monthlyInterestRate = interest / 12
-  const periods = term * 12
-  const numerator = total * monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods)
-  const denominator = Math.pow((1+monthlyInterestRate), periods) -1
-  return (numerator / denominator).toFixed(2)
-}
+
 
 //Write your monthlyCalculator function above this line
 
-//do not modify the console.log
-console.log("monthlyCalculator 4298.42 === ", monthlyCalculator(400000, 0.01, 15))
 
 
+////////////////////////////////////////////////////////////////////////////
 // 🏡 Task 5: Conditionals
 /* 
 
@@ -147,23 +129,11 @@ if credit score is below 660, interest rate increases by 0.5% (.005) and if cred
 Return the updated monthly payment by returning monthlyCalculator with the total, updated interest (if any), and term
 
 */
-
 //Write your scoreCalculator function on the line below
 
-const scoreCalculator = (total, interest, term, score) => {
-  if(score > 740){
-    interest = interest - .005
-  } else if (score < 660) {
-    interest = interest + .005
-  }
-  return monthlyCalculator(total, interest, term)
-}
 
-//do not modify these console.logs
-console.log("scoreCalculator 897.57 ===", scoreCalculator(300000, .01, 30, 800));
-console.log("scoreCalculator 964.92 ===", scoreCalculator(300000, .01, 30, 700));
-console.log("scoreCalculator 1035.36 ===", scoreCalculator(300000, .01, 30, 600));
 
+////////////////////////////////////////////////////////////////////////////
 // 🏡 Task 6: Loops
 /* 
 Write a new function called interestRateList.
@@ -191,27 +161,16 @@ Oscar, with an interest rate of 0.05, your monthly rate is $1074.64
 Oscar, with an interest rate of 0.055, your monthly rate is $1136.38
 Oscar, with an interest rate of 0.06, your monthly rate is $1199.10
 */
-
 //write your interestRateList below
 
-const interestRateList = (total, interest, term) => {
-  interest = (interest - .02)
-  for(let i = 0; i < 10; i++){
-    payment = monthlyCalculator(total, interest, term)
-    console.log(`${name}, with an interest rate of ${interest.toFixed(3)}, your monthly rate is ${payment}`)
-    interest = interest + .005
-  }
-}
-
-//do not modify the line below
-interestRateList(200000, 0.04, 30)
 
 
+////////////////////////////////////////////////////////////////////////////
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
 
-/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+/*  🏡 Make a new function that returns an updated monthly total. This function should have additional parameters for `Property Tax`, `Homeowner's insurance` and `HOA fees` */
 
 
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
@@ -220,4 +179,17 @@ interestRateList(200000, 0.04, 30)
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
 
 
-/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+/* 🏡  Make a your `interestRateList2()` function to accept an array of interest rates */
+
+
+
+////////////////////////////////////////////////////////////////////////////
+//do not modify the lines below
+typeof montlyCalculator != "undefined" && console.log("monthlyCalculator 4298.42 === ", monthlyCalculator(400000, 0.01, 15))
+
+typeof scoreCalculator != "undefined" && console.log("scoreCalculator 897.57 ===", scoreCalculator(300000, .01, 30, 800));
+typeof scoreCalculator != "undefined" && console.log("scoreCalculator 964.92 ===", scoreCalculator(300000, .01, 30, 700));
+typeof scoreCalculator != "undefined" && console.log("scoreCalculator 1035.36 ===", scoreCalculator(300000, .01, 30, 600));
+
+typeof interestRateList != "undefined" && interestRateList(200000, 0.04, 30)
+////////////////////////////////////////////////////////////////////////////
